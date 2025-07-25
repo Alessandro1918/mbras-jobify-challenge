@@ -1,5 +1,6 @@
 import express from "express"
 import cors from "cors"
+import { getJobsRoute } from "./routes/get-jobs"
 
 const PORT = Number(process.env.PORT)
 
@@ -11,6 +12,7 @@ app.use(cors({
 }))
 
 app.get("/", (req, res) => {res.send("Hello, world!")})
+app.get("/api/v1/jobs", getJobsRoute)
 
 app.listen(PORT, () => {
   console.log(`✅ Server running at http://localhost:${PORT}`)

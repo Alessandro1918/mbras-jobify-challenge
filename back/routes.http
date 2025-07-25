@@ -1,0 +1,10 @@
+# Variables
+@baseUrl = http://localhost:4000
+
+# Check server online status
+GET {{baseUrl}}
+
+###
+
+# List jobs per page
+GET {{baseUrl}}/api/v1/jobs?page=1
