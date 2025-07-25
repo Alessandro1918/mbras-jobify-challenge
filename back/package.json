@@ -1,0 +1,20 @@
+{
+  "name": "mbras-jobify-back",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "Ale B. C.",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx watch --env-file .env src/server.ts",
+    "start": "tsx --env-file .env src/server.ts"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "tsx": "^4.20.3"
+  }
+}
