@@ -2,6 +2,7 @@ import Image from "next/image"
 import { FaDollarSign, FaRegClock, FaGlobe } from "react-icons/fa"
 import { PageControls } from "./components/page-controls"
 import { UserAreaButton } from "./components/user-area-button"
+import { Star } from "./components/star-button"
 import { getJobs } from "./services/get-jobs"
 import { getUser } from "./services/get-user"
 
@@ -20,7 +21,6 @@ export default async function Home(props: Props) {
 
   const user = await getUser()
   const favorites = user.favorite_jobs || []
-  console.log(favorites)
 
   return (
     <div className="font-sans flex flex-col gap-4 p-4 items-center justify-center">      
@@ -37,14 +37,20 @@ export default async function Home(props: Props) {
                 key={job.id}
                 className="flex flex-col w-full p-2 border-2 border-zinc-400 rounded-xl"
               >
-                <div className="flex flex-row items-center gap-2">
-                  <Image
-                    width={48} height={48}
-                    src={job.company_logo}
-                    alt={`Company logo: ${job.company_name}`}
-                    title={`Company logo: ${job.company_name}`}
+                <div className="flex flex-row items-center justify-between">
+                  <div className="flex flex-row items-center gap-2">
+                    <Image
+                      width={48} height={48}
+                      src={job.company_logo}
+                      alt={`Company logo: ${job.company_name}`}
+                      title={`Company logo: ${job.company_name}`}
+                    />
+                    <h1>{job.company_name}</h1>
+                  </div>
+                  <Star 
+                    jobId={String(job.id)} 
+                    favorites={favorites} 
                   />
-                  <h1>{job.company_name}</h1>
                 </div>
 
                 <h1 className="capitalize">{job.title}</h1>
