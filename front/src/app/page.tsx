@@ -1,7 +1,9 @@
 import Image from "next/image"
 import { FaDollarSign, FaRegClock, FaGlobe } from "react-icons/fa"
 import { PageControls } from "./components/page-controls"
-import { getJobs } from "./service/get-jobs"
+import { UserAreaButton } from "./components/user-area-button"
+import { getJobs } from "./services/get-jobs"
+import { getUser } from "./services/get-user"
 
 type Props = {
   searchParams?: Promise<{
@@ -16,8 +18,17 @@ export default async function Home(props: Props) {
 
   const jobs = await getJobs(currentPage)
 
+  const user = await getUser()
+  const favorites = user.favorite_jobs || []
+  console.log(favorites)
+
   return (
     <div className="font-sans flex flex-col gap-4 p-4 items-center justify-center">      
+      <div className="flex flex-row w-full items-center justify-between">
+        <h1 className="text-6xl">Jobify</h1>
+        <UserAreaButton />
+      </div>      
+
       <div className="flex flex-col w-full h-full p-4 gap-4 border-2 border-zinc-400 rounded-xl">
         {
           jobs.map(job => {

@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react"
 import { useSearchParams, usePathname, useRouter } from "next/navigation"
 
+//https://nextjs.org/learn/dashboard-app/adding-search-and-pagination
 export function PageControls() {
 
   const searchParams = useSearchParams()
