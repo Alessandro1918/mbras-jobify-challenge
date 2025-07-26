@@ -1,10 +1,40 @@
 # Variables
 @baseUrl = http://localhost:4000
+@access_token = {{login.response.body.$.session.access_token}}
+@refresh_token = {{login.response.body.$.session.refresh_token}}
 
-# Check server online status
+###
+# Check server status (online / offline)
 GET {{baseUrl}}
 
 ###
-
 # List jobs per page
 GET {{baseUrl}}/api/v1/jobs?page=1
+
+###
+# Sign up new user
+POST {{baseUrl}}/api/v1/sign-up
+Content-Type: application/json
+
+{
+  "email": "alessandro@gmail.com",
+  "password": "12345678",
+  "username": "alebc"
+}
+
+###
+# Login with email and password
+# @name login
+POST {{baseUrl}}/api/v1/login
+Content-Type: application/json
+
+{
+  "email": "alessandro@gmail.com",
+  "password": "12345678"
+}
+
+###
+# Get the logged user personal data
+GET {{baseUrl}}/api/v1/me
+Authorization: Bearer {{access_token}}
+X-Refresh-Token: {{refresh_token}}
