@@ -38,3 +38,14 @@ Content-Type: application/json
 GET {{baseUrl}}/api/v1/me
 Authorization: Bearer {{access_token}}
 X-Refresh-Token: {{refresh_token}}
+
+###
+# Save a job as a favorite for this user. If already saved, delete from db
+POST {{baseUrl}}/api/v1/favorite
+Authorization: Bearer {{access_token}}
+X-Refresh-Token: {{refresh_token}}
+Content-Type: application/json
+
+{
+  "jobId": "1234"
+}
