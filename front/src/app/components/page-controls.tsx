@@ -1,6 +1,7 @@
 "use client"
 import { useState, useEffect } from "react"
 import { useSearchParams, usePathname, useRouter } from "next/navigation"
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa"
 
 //https://nextjs.org/learn/dashboard-app/adding-search-and-pagination
 export function PageControls() {
@@ -46,10 +47,10 @@ export function PageControls() {
   }
 
   return (
-    <div className="flex flex-row gap-4">
-      <button onClick={handleDec}>{"<"}</button>
-      <h1>{page}</h1>
-      <button onClick={handleInc}>{">"}</button>
+    <div className="flex flex-row gap-8">
+      <button className="cursor-pointer" onClick={handleDec}><FaChevronLeft className="size-5 text-gray-700"/></button>
+      <h1 className="text-3xl">{page}</h1>
+      <button className="cursor-pointer" onClick={handleInc}><FaChevronRight className="size-5 text-gray-700"/></button>
     </div>
   )
 }

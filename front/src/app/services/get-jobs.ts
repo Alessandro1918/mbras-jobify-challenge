@@ -1,4 +1,4 @@
-type JobProps = {
+export type JobProps = {
   id: number                            // 123
   url: string,                          // "https://remotive.com/remote-jobs/product/lead-developer-123"
   title: string,                        // "Lead Developer"

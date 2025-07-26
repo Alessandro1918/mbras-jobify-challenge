@@ -10,6 +10,11 @@ export function UserAreaButton() {
   }
 
   return (
-    <button onClick={handleUserAreaClick}>Área do Usuário</button>
+    <button 
+      onClick={handleUserAreaClick}
+      className="text-xl cursor-pointer"
+    >
+      Área do Usuário
+    </button>
   )
 }
