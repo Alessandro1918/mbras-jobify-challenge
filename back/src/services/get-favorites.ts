@@ -1,6 +1,6 @@
 import { eq } from 'drizzle-orm'
-import { db } from '../db/connection.ts'
-import { schema } from '../db/schema/index.ts'
+import { db } from '../db/connection'
+import { schema } from '../db/schema/index'
 
 export async function getFavorites(userId: string) {
   const results = await db

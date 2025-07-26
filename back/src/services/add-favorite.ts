@@ -1,5 +1,5 @@
-import { db } from '../db/connection.ts'
-import { schema } from '../db/schema/index.ts'
+import { db } from '../db/connection'
+import { schema } from '../db/schema/index'
 
 export async function addFavorite(userId: string, jobId: string) {
   const result = await db

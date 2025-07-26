@@ -1,4 +1,4 @@
-import { favorites } from './favorites.ts'
+import { favorites } from './favorites'
 
 export const schema = {
   favorites
