@@ -4,6 +4,7 @@ import { getJobsRoute } from "./routes/get-jobs"
 import { signUpRoute } from "./routes/sign-up"
 import { loginRoute } from "./routes/login"
 import { getUserRoute } from "./routes/get-user"
+import { favoriteRoute } from "./routes/favorite"
 import { auth } from "./middlewares/auth"
 
 const PORT = Number(process.env.PORT)
@@ -21,6 +22,7 @@ app.get("/api/v1/jobs", getJobsRoute)
 app.post("/api/v1/sign-up", signUpRoute)
 app.post("/api/v1/login", loginRoute)
 app.get("/api/v1/me", auth, getUserRoute)
+app.post("/api/v1/favorite", auth, favoriteRoute)
 
 app.listen(PORT, () => {
   console.log(`✅ Server running at http://localhost:${PORT}`)

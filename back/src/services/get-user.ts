@@ -1,4 +1,5 @@
 import { supabase } from "../utils/supabase/client"
+import { getFavorites } from "../services/get-favorites"
 
 export async function getUserService() {
 
@@ -13,5 +14,11 @@ export async function getUserService() {
     throw new Error("Error: User not found")
   }
 
-  return data.user
+  const userId = data.user.id
+  const favorites = await getFavorites(userId)
+
+  return { 
+    ...data.user, 
+    favorite_jobs: favorites
+  }
 }
