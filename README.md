@@ -1,90 +1,69 @@
 # Jobify: Desafio - Painel de Vagas de Emprego
 
-**Objetivo:** Construir um aplicativo de listagem de vagas onde os usuários possam navegar pelas oportunidades, filtrar por categoria e visualizar detalhes.
+## 🚀 Projeto
+Aplicativo de listagem de vagas onde os usuários possam navegar pelas oportunidades, filtrar por categoria e visualizar detalhes. Projeto proposto pela [MBRAS](https://www.mbras.com.br).
 
-## Requisitos
+Confira online em: [https://mbras-jobify-front.vercel.app/](https://mbras-jobify-front.vercel.app/)
 
-1. **Stack:**
+<div align="center">
+  <img 
+    width="40%" alt="print-1" title="print-1" 
+    src="github_assets/print-1.png"
+  />
+  <img 
+    width="25%" alt="print-2" title="print-2" 
+    src="github_assets/print-2.jpg"
+  />
+   <img 
+    width="25%" alt="print-3" title="print-3" 
+    src="github_assets/print-3.jpg"
+  />
+</div>
 
-   - Next.js (React, TypeScript)
-   - **ShadCN** e **TailwindCSS** (Recomendado para UI, pois são usados na empresa)
+## 🛠️ Tecnologias
+- 📊 Backend: [Node.js](https://nodejs.org/en/) | [Express](https://expressjs.com) | [Drizzle ORM](https://orm.drizzle.team) | [Supabase](https://supabase.com)
+- 🖼️ Frontend: [React](https://pt-br.reactjs.org) | [Next.js](https://nextjs.org) | [Tailwind CSS](https://tailwindcss.com) | [chadcn/ui](https://ui.shadcn.com)
 
-2. **Funcionalidades:**
+## 🧊 Cool features:
+- Uso da **[API Remotive](https://remotive.io/api-documentation)** como base de dados, manipulada por backend próprio (publicado na Vercel);
+- Acesso de usuários com login e senha (Auth Supabase);
+- Usuários logados podem salvar suas vagas favoritas;
 
-   - **Página de Listagem de Vagas:** Buscar e exibir uma lista de vagas de emprego a partir de uma API.
-   - **Página de Detalhes da Vaga:** Ao clicar em uma vaga, o usuário deve ser redirecionado para uma página com mais informações.
-   - **Filtro por Categoria:** Permitir a filtragem de vagas por categoria (ex: Frontend, Backend, Full Stack).
-   - **Design Responsivo:** Deve funcionar bem tanto em dispositivos móveis quanto em desktops.
-   - **Favoritos:** Desenvolva uma funcionalidade para que os usuários possam "favoritar" vagas. Essas vagas favoritas devem ser armazenadas em um banco de dados e persistir mesmo após o usuário atualizar a página ou fechar o navegador.
+## 🗂️ Utilização
 
-3. **Integração com API:**
-
-- Utilizar a **[API do Remotive](https://remotive.io/api-documentation)** (API pública de listagem de empregos). No entanto, é obrigatório que você crie sua própria API de backend para consumir os dados do Remotive e, então, o seu frontend consuma essa API intermediária. Isso simula um ambiente de produção real e permite avaliar suas habilidades em construir um backend.
-
-4.**Banco de dados:**
-
-- **Banco Relacional Preferido:** **Supabase** (Banco PostgreSQL gratuito + autenticação)
-- **Banco NoSQL (Alternativa):** **Firebase Firestore** (Banco NoSQL gratuito)
-- O usuário deve conseguir visualizar suas vagas salvas mesmo após atualizar a página.
-- **Preferência:** Embora ambos os bancos (relacional e NoSQL) sejam válidos, **bancos relacionais** são preferenciais para este desafio, pois se alinham mais com a estrutura que usamos na empresa.
-
-**Desafio Adicional (Opcional):**
-
-- **Utilizar Docker** para subir **tudo junto**. Crie um **Docker Compose** para subir o site, a API e o banco de dados. Recomendamos uma estrutura de pastas como:
-
+- 📌 Confira a lista de vagas no projeto publicado: [https://mbras-jobify-front.vercel.app/](https://mbras-jobify-front.vercel.app/)
+- 📌 Faça login em [https://mbras-jobify-front.vercel.app/login](https://mbras-jobify-front.vercel.app/login) para poder salvar vagas como favoritas (OBS: a autenticação antes de favoritar vagas é **obrigatória**; a verificação de usuários não logados usando a rota POST /favoritos não foi totalmente desenvolvida);</br>
+Usuários cadastrados:
 ```bash
-      .
-      ├── frontend
-      │   ├── public
-      ├── backend
-      │   ├── src
-      └── database
-         └── migrations
+  email: alessandro@gmail.com   password: 12345678
+  email: bob@gmail.com          password: 12345678
+  email: charlie@gmail.com      password: 12345678
 ```
 
-Você pode organizar da maneira que preferir, desde que mantenha tudo no mesmo repositório. Se decidir usar um banco local, o desafio será maior, pois você precisará configurar o banco de dados localmente dentro do Docker.
-
-## Fluxo de Fork e Pull Request (PR)
-
-Para realizar este teste, o processo será feito diretamente em um repositório público no GitHub. O fluxo a ser seguido é o seguinte:
-
-1. **Fork do Repositório:**
-
-   - Acesse o repositório público do teste (será fornecido o link).
-   - Faça um **fork** do repositório para sua conta do GitHub. Isso cria uma cópia do repositório em seu perfil, onde você poderá trabalhar nas modificações.
-
-2.**Clone o Repositório para seu Ambiente Local:**
-
-- Após fazer o fork, **clone o repositório** para o seu ambiente de desenvolvimento local usando o comando:
+### 🐑🐑 Clonando o repositório:
 
 ```bash
-     git clone https://github.com/seu-usuario/mbras-jobify-challenge.git
- ```
+  $ git clone url-do-projeto.git
+```
 
-3.**Desenvolvimento:**
+📊 Terminal 1: Backend (Servidor)
+```bash
+  $ cd back                   # change to this directory
+  $ cp .env.example .env      # create the ".env" file like the ".env.example" file
+  $ npm install               # download dependencies to node_modules
+  $ npx drizzle-kit generate  # optional: create the .sql files based on the db schema
+  $ npx drizzle-kit migrate   # execute SQL commands from the db/migrations files
+  $ npm run dev               # start the project
+```
 
-- Siga as instruções do repositório (caso existam) ou desenvolva a solução conforme os requisitos descritos.
-- Faça commits frequentes no seu repositório para garantir que o progresso está sendo salvo.
+Rotas disponíveis: checar arquivo [back/routes.http](https://github.com/Alessandro1918/mbras-jobify-challenge/blob/main/back/routes.http). Usar com a extensão [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) para o VS Code.
 
-4.**Criação do Pull Request (PR):**
+🖼️ Terminal 2: Frontend (Site web)
+```bash
+  $ cd front              # change to this directory
+  $ cp .env.example .env  #create the ".env" file like the ".env.example" file
+  $ npm install           # download dependencies to node_modules
+  $ npm run dev           # start the project
+```
 
-- Quando terminar o desenvolvimento, faça o push das alterações para o seu repositório remoto.
-- Abra um **Pull Request (PR)** no repositório original. No PR, descreva as funcionalidades implementadas e qualquer detalhe relevante.
-- Nosso time irá revisar o PR, focando nas soluções e habilidades que você utilizou para resolver os desafios.
-
-5.**Feedback:**
--Após a análise, você receberá feedback sobre a entrega, baseado nas boas práticas e no uso das tecnologias recomendadas.
-
-## Importante
-
-**Se você achar que não tem tempo suficiente, não se preocupe com os desafios opcionais.** Foque na entrega do que for mais importante, e não se importe se não conseguir implementar tudo. A avaliação será baseada **nas habilidades e soluções que você utilizou** para criar a funcionalidade que conseguiu implementar.
-
-## Critérios de Avaliação
-
-✅ Estrutura e boas práticas de código  
-✅ Integração com API e manipulação de dados  
-✅ Conhecimento em Next.js & React (Rotas, Hooks, etc.)  
-✅ **Cuidado com o design e UI do aplicativo** (Uso adequado de ShadCN e Tailwind, layout organizado)  
-✅ Responsividade  
-✅ (Bônus) Integração com banco de dados e operações CRUD  
-✅ (Desafio Adicional) Uso de Docker Compose para criar e gerenciar o site, a API e o banco de dados local
+Confira online em: <code>http://localhost:3000</code>
