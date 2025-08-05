@@ -32,7 +32,7 @@ export async function setFavoriteService(jobId: string) {
     }
 
     if (response.status != 201 && response.status != 204) {
-      throw new Error("500")
+      throw new Error(String(response.status))  // and front component using this service will decide what to do (redirect to "login", probably)
     }
 
   } catch (err: any) {

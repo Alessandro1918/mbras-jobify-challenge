@@ -1,6 +1,16 @@
 import jwt from "jsonwebtoken"
+import { supabase } from "../utils/supabase/client"
 
 export async function auth(req, res, next) {
+
+  const { data, error } = await supabase.auth.getUser()
+
+  if (error) {
+    return res.status(401).json({ error: error.message })
+  }
+  if (!data?.user) {
+    return res.status(404).json({ error: "User not found" })
+  }
 
   const authHeader = req.headers["authorization"]
   const refreshToken = req.headers["x-refresh-token"]

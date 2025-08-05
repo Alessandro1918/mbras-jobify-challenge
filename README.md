@@ -26,13 +26,14 @@ Confira online em: [https://mbras-jobify-front.vercel.app/](https://mbras-jobify
 
 ## 🧊 Cool features:
 - Uso da **[API Remotive](https://remotive.io/api-documentation)** como base de dados, manipulada por backend próprio (publicado na Vercel);
+- Páginas estáticas renderizadas server-side, para uma melhor performance;
 - Acesso de usuários com login e senha (Auth Supabase);
 - Usuários logados podem salvar suas vagas favoritas;
 
 ## 🗂️ Utilização
 
 - 📌 Confira a lista de vagas no projeto publicado: [https://mbras-jobify-front.vercel.app/](https://mbras-jobify-front.vercel.app/)
-- 📌 Faça login em [https://mbras-jobify-front.vercel.app/login](https://mbras-jobify-front.vercel.app/login) para poder salvar vagas como favoritas (OBS: a autenticação antes de favoritar vagas é **obrigatória**; a verificação de usuários não logados usando a rota POST /favoritos não foi totalmente desenvolvida);</br>
+- 📌 Faça login em [https://mbras-jobify-front.vercel.app/login](https://mbras-jobify-front.vercel.app/login) para poder salvar vagas como favoritas</br>
 Usuários cadastrados:
 ```bash
   email: alessandro@gmail.com   password: 12345678

@@ -34,7 +34,7 @@ Content-Type: application/json
 }
 
 ###
-# Get the logged user personal data
+# Get the logged user personal data (username, array of favorites)
 GET {{baseUrl}}/api/v1/me
 Authorization: Bearer {{access_token}}
 X-Refresh-Token: {{refresh_token}}
