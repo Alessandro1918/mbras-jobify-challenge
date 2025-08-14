@@ -1,5 +1,6 @@
 "use client"
 import { useRouter } from "next/navigation"
+import { logout } from "../services/logout"
 import { deleteCookie } from "../services/delete-cookie"
 
 export function LogoutButton() {
@@ -8,6 +9,8 @@ export function LogoutButton() {
 
   async function handleLogout() {  
     try {
+
+      await logout()
 
       await deleteCookie("accessToken")
       await deleteCookie("refreshToken")
