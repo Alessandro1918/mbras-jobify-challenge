@@ -1,7 +1,7 @@
 # Jobify: Desafio - Painel de Vagas de Emprego
 
 ## 🚀 Projeto
-Aplicativo de listagem de vagas onde os usuários possam navegar pelas oportunidades, filtrar por categoria e visualizar detalhes. Projeto proposto pela [MBRAS](https://www.mbras.com.br).
+Aplicativo de listagem de vagas onde os usuários possam navegar pelas oportunidades, visualizar detalhes, e marcas vagas como "Favoritas". Projeto proposto pela [MBRAS](https://www.mbras.com.br).
 
 Confira online em: [https://mbras-jobify-front.vercel.app/](https://mbras-jobify-front.vercel.app/)
 
@@ -25,21 +25,25 @@ Confira online em: [https://mbras-jobify-front.vercel.app/](https://mbras-jobify
 - 🖼️ Frontend: [React](https://pt-br.reactjs.org) | [Next.js](https://nextjs.org) | [Tailwind CSS](https://tailwindcss.com) | [chadcn/ui](https://ui.shadcn.com)
 
 ## 🧊 Cool features:
-- Uso da **[API Remotive](https://remotive.io/api-documentation)** como base de dados, manipulada por backend próprio (publicado na Vercel);
-- Páginas estáticas renderizadas server-side, para uma melhor performance;
+- Frontend publicado online (Vercel);
+- Design responsivo para web / mobile;
+- Server side render das páginas estáticas - mais performance e menos loading time;
+- Uso da **[API Remotive](https://remotive.io/api-documentation)** como base de dados, manipulada por backend próprio online (Vercel);
 - Acesso de usuários com login e senha (Auth Supabase);
 - Usuários logados podem salvar suas vagas favoritas;
 
 ## 🗂️ Utilização
 
 - 📌 Confira a lista de vagas no projeto publicado: [https://mbras-jobify-front.vercel.app/](https://mbras-jobify-front.vercel.app/)
-- 📌 Faça login em [https://mbras-jobify-front.vercel.app/login](https://mbras-jobify-front.vercel.app/login) para poder salvar vagas como favoritas</br>
+- 📌 Faça login em [https://mbras-jobify-front.vercel.app/login](https://mbras-jobify-front.vercel.app/login) para poder salvar vagas como favoritas.
 Usuários cadastrados:
 ```bash
   email: alessandro@gmail.com   password: 12345678
   email: bob@gmail.com          password: 12345678
   email: charlie@gmail.com      password: 12345678
 ```
+- 📌 Favoritar vagas sem logar antes irá encaminhar o usuário para a [tela de login](https://mbras-jobify-front.vercel.app/login).
+
 
 ### 🐑🐑 Clonando o repositório:
 
