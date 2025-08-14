@@ -1,7 +1,7 @@
 "use server"
 import { cookies } from "next/headers"
 
-export async function setFavoriteService(jobId: string) {
+export async function setFavorite(jobId: string) {
 
   try {
 

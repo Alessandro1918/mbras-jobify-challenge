@@ -2,7 +2,7 @@
 import { useState } from "react"
 import { useRouter } from "next/navigation"
 import { FaStar, FaRegStar } from "react-icons/fa"
-import { setFavoriteService } from "../services/set-favorite"
+import { setFavorite } from "../services/set-favorite"
 
 type Props = {
   jobId: string,
@@ -18,7 +18,7 @@ export function Star({ jobId, favorites }: Props) {
   async function handleClick() {
     setIsFavorite(!isFavorite)
     try {
-      await setFavoriteService(jobId)
+      await setFavorite(jobId)
     } catch (err) {
       router.push("/login")
     }
