@@ -1,7 +1,11 @@
 "use client"
 import { useRouter } from "next/navigation"
 
-export function UserAreaButton() {
+type Props = {
+  username: string | null
+}
+
+export function UserAreaButton({ username }: Props) {
 
   const router = useRouter()
 
@@ -9,12 +13,25 @@ export function UserAreaButton() {
     router.push("/perfil")
   }
 
+  function handleLoginClick() {
+    router.push("/login")
+  }
+
   return (
-    <button 
-      onClick={handleUserAreaClick}
-      className="text-xl cursor-pointer"
-    >
-      Área do Usuário
-    </button>
+    username
+    ?
+      <button 
+        onClick={handleUserAreaClick}
+        className="text-xl cursor-pointer"
+      >
+        Olá, {username}!
+      </button>
+    :    
+      <button 
+        onClick={handleLoginClick}
+        className="text-xl cursor-pointer"
+      >
+        Login
+      </button>
   )
 }

@@ -3,6 +3,7 @@ import cors from "cors"
 import { getJobsRoute } from "./routes/get-jobs"
 import { signUpRoute } from "./routes/sign-up"
 import { loginRoute } from "./routes/login"
+import { logoutRoute } from "./routes/logout"
 import { getUserRoute } from "./routes/get-user"
 import { favoriteRoute } from "./routes/favorite"
 import { auth } from "./middlewares/auth"
@@ -21,6 +22,7 @@ app.get("/", (req, res) => {res.send("Hello, world!")})
 app.get("/api/v1/jobs", getJobsRoute)
 app.post("/api/v1/sign-up", signUpRoute)
 app.post("/api/v1/login", loginRoute)
+app.post("/api/v1/logout", auth, logoutRoute)
 app.get("/api/v1/me", auth, getUserRoute)
 app.post("/api/v1/favorite", auth, favoriteRoute)
 

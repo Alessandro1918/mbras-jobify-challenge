@@ -19,12 +19,13 @@ export default async function Home(props: Props) {
 
   const user = await getUser()
   const favorites = user.favorite_jobs || []
+  const username = user.user_name || null
 
   return (
     <div className="font-sans flex flex-col gap-4 p-4 items-center justify-center">      
       <div className="flex flex-row w-full items-center justify-between">
         <h1 className="text-6xl">Jobify</h1>
-        <UserAreaButton />
+        <UserAreaButton username={username}/>
       </div>      
 
       <div className="flex flex-col w-full h-full p-4 gap-4 border-2 border-zinc-300 rounded-xl">

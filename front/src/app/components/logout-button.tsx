@@ -6,14 +6,19 @@ export function LogoutButton() {
 
   const router = useRouter()
 
-  async function logout() {  
-    await deleteCookie("accessToken")
-    await deleteCookie("refreshToken")
-  
-    router.push("/")
+  async function handleLogout() {  
+    try {
+
+      await deleteCookie("accessToken")
+      await deleteCookie("refreshToken")
+
+      router.push("/")
+    } catch (err: any) {
+      alert(err.message)
+    }
   }
 
   return (
-    <button onClick={logout}>Logout</button>
+    <button onClick={handleLogout}>Logout</button>
   )
 }

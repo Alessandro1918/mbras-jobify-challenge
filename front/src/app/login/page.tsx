@@ -15,8 +15,10 @@ export default function LoginPage() {
       const password = formData.get("password")
 
       const data = await login(email!.toString(), password!.toString())
+
       await setCookie("accessToken", data.session.access_token)
       await setCookie("refreshToken", data.session.refresh_token)
+
       router.push("/")
     } catch (err: any) {
       alert(err.message)

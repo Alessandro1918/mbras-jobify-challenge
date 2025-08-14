@@ -5,9 +5,9 @@ import { removeFavorite } from "../services/remove-favorite"
 export async function favoriteRoute(req, res) {
   try {
     const userId = req.user.sub
-    const { jobId } = req.body
-
     const favorites = await getFavorites(userId)
+
+    const { jobId } = req.body
 
     if (favorites.includes(jobId)) {
       await removeFavorite(userId, jobId)

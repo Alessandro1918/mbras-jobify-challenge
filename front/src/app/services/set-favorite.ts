@@ -1,7 +1,7 @@
 "use server"
 import { cookies } from "next/headers"
 
-export async function setFavoriteService(jobId: string) {
+export async function setFavorite(jobId: string) {
 
   try {
 
@@ -32,7 +32,7 @@ export async function setFavoriteService(jobId: string) {
     }
 
     if (response.status != 201 && response.status != 204) {
-      throw new Error("500")
+      throw new Error(String(response.status))  // and front component using this service will decide what to do (redirect to "login", probably)
     }
 
   } catch (err: any) {
